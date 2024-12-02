@@ -2,28 +2,31 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FaBars, FaTimes } from "react-icons/fa"; // Menu icons for open/close
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Nav() {
-  const [isOpen, setIsOpen] = useState(false); // State to manage menu open/close
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleLinkClick = () => {
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 100);
+  };
+
   return (
     <>
-      {/* Navigation Bar */}
       <nav className="nav">
         <div className="container">
-          {/* Website Logo */}
           <div className="logo">
             <Link href="/" passHref>
-              <span className="hover:underline">My Website</span>
+              <span className="hover:underline">My Portfolio.</span>
             </Link>
           </div>
 
-          {/* Desktop Menu */}
           <div className="desktop-menu">
             <Link href="/home" passHref>
               <span className="menu-item">Home</span>
@@ -31,52 +34,64 @@ export default function Nav() {
             <Link href="/about" passHref>
               <span className="menu-item">About</span>
             </Link>
+            <Link href="/skills" passHref>
+              <span className="menu-item">Skills</span>
+            </Link>
             <Link href="/contact" passHref>
               <span className="menu-item">Contact</span>
             </Link>
           </div>
 
-          {/* Mobile Menu Icon (Always visible) */}
           <div className="mobile-menu-icon" onClick={toggleMenu}>
             {isOpen ? <FaTimes /> : <FaBars />}
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu - Shown only when isOpen is true */}
-      <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
+      <div className={`mobile-menu ${isOpen ? "active" : ""}`}>
         <ul className="menu-list">
           <li>
             <Link href="/home" passHref>
-              <span onClick={toggleMenu} className="menu-item">Home</span>
+              <span onClick={handleLinkClick} className="menu-item">Home</span>
             </Link>
           </li>
           <li>
             <Link href="/about" passHref>
-              <span onClick={toggleMenu} className="menu-item">About</span>
+              <span onClick={handleLinkClick} className="menu-item">About</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/skills" passHref>
+              <span onClick={handleLinkClick} className="menu-item">Skills</span>
             </Link>
           </li>
           <li>
             <Link href="/contact" passHref>
-              <span onClick={toggleMenu} className="menu-item">Contact</span>
+              <span onClick={handleLinkClick} className="menu-item">Contact</span>
             </Link>
           </li>
         </ul>
       </div>
 
-      {/* CSS Styles */}
       <style jsx>{`
         .nav {
           position: fixed;
           top: 0;
           left: 0;
           width: 100%;
-          background: linear-gradient(to right, #5e2b91, #000000, #5e2b91); /* Gradient from purple to black */
-          padding: 1.5rem; /* Adjust padding as needed */
+          background: linear-gradient(to right, #5e2b91, #000000, #5e2b91);
+          padding: 1.5rem;
           z-index: 50;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-          transition: all 0.5s ease;
         }
+        .mobile-menu.active {
+  display: block;
+  position: fixed; /* Ensure it overlays everything */
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Higher than other elements */
+}
 
         .container {
           display: flex;
@@ -86,77 +101,68 @@ export default function Nav() {
 
         .logo {
           color: white;
-          font-weight: bold;
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
 
         .desktop-menu {
-          display: flex; /* Show the menu items for desktop */
-          gap: 3rem; /* Space between menu items */
+          display: flex;
+          gap: 3rem;
         }
 
         .mobile-menu-icon {
-          display: none; /* Hidden by default for desktop */
-          position: fixed; /* Fixed positioning */
-          top: 1rem; /* Adjust as needed */
-          right: 1rem; /* Adjust as needed */
-          background-color: #5e2b91; /* Background color for the menu icon */
-          border-radius: 50%; /* Circular icon */
-          padding: 10px; /* Padding around the icon */
+          display: none;
+          position: fixed;
+          top: 1rem;
+          right: 1rem;
           color: white;
-          font-size: 2rem;
+          font-size: 1.5rem;
           cursor: pointer;
-          z-index: 60; /* Ensure it's above other content */
+          z-index: 100;
         }
 
         .mobile-menu {
-          display: none; /* Hidden by default */
-          background-color: rgba(94, 43, 145, 0.95); /* Slightly transparent purple background */
-          text-align: center;
-          padding: 1.5rem 0;
+          display: none;
           position: absolute;
-          top: 80px; /* Adjust position as needed */
+          top: 4rem;
           left: 0;
           width: 100%;
-          transition: all 0.5s ease;
-          border-radius: 5px; /* Rounded corners */
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+          background-color: rgba(94, 43, 145, 0.95);
+          text-align: center;
+          padding: 1.5rem;
+          border-radius: 5px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .mobile-menu.active {
-          display: block; /* Display when active */
+          display: block;
         }
 
         .menu-list {
-          list-style-type: none; /* Remove bullet points */
-          padding: 0; /* Remove default padding */
-        }
-
-        .menu-list li {
-          padding: 0.5rem 0; /* Space between items */
+          list-style: none;
+          padding: 0;
+          margin: 0;
         }
 
         .menu-item {
-          color: #d1d5db; /* Light gray color */
-          font-weight: bold;
+          display: block;
+          color: #d1d5db;
+          padding: 0.5rem 1rem;
           font-size: 1rem;
-          cursor: pointer;
-          padding: 1rem; /* Add padding for better touch target */
-          transition: background-color 0.3s, color 0.3s; /* Transition for hover effects */
-          border-radius: 2px; /* Rounded corners for menu items */
+          transition: color 0.3s, background-color 0.3s;
         }
 
         .menu-item:hover {
-          background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
-          color: white; /* Change color on hover */
+          background-color: rgba(255, 255, 255, 0.1);
+          color: white;
         }
 
         @media (max-width: 768px) {
           .desktop-menu {
-            display: none; /* Hide desktop menu on smaller screens */
+            display: none;
           }
+
           .mobile-menu-icon {
-            display: block; /* Show mobile menu icon on smaller screens */
+            display: block;
           }
         }
       `}</style>

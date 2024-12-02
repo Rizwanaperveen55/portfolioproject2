@@ -6,7 +6,10 @@ export default function Home() {
   return (
     <>
       <div className="home-container">
-        {/* Container with responsive design, shadow, and transitions */}
+        {/* Background Image */}
+        <div className="background-image"></div>
+
+        {/* Content Section */}
         <div className="home-content">
           {/* Heading Section */}
           <h1 className="home-heading-1">Hey, I&apos;m</h1>
@@ -37,28 +40,70 @@ export default function Home() {
       <style jsx>{`
         /* Home container styles */
         .home-container {
+          position: relative;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           min-height: 100vh;
-          background: linear-gradient(to right, #4b0082, #000000, #00008b);
-          background-size: cover;
-          background-position: center;
           padding: 1rem;
+          overflow: hidden;
+          
         }
 
+        /* Background image styles */
+        
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-image: url("/images/result.png");
+
+  background-size: cover; /* Scale the image to fit */
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  z-index: -1;
+  transition: opacity 0.1s ease-in-out;
+  opacity: 0.7; /* Initial opacity */
+  pointer-events: none; /* Prevent interference with other elements */
+}
+
+/* Hover effect on the parent container */
+
+  .home-container:hover .background-image {
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: 1s;
+
+
+}
+
+.home-container:hover .background-image{
+     
+     background-image: url("/images/result.png");
+     background-size: 50%; /* Scale the image to fit */
+    opacity: 0.5;
+}
         /* Main content styles */
         .home-content {
           text-align: center;
           padding: 3rem 4rem;
-          background: rgba(0, 0, 0, 0.7);
+          margin-top:6rem;   
           border-radius: 2rem;
-          border: 2px solid #800080;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); */
           transition: transform 0.5s, border 0.5s, box-shadow 0.5s;
           width: 100%;
           max-width: 750px;
+          z-index: 1; /* Ensure content is above the background */
         }
 
         .home-content:hover {
@@ -72,7 +117,6 @@ export default function Home() {
           font-size: 2.5rem;
           font-weight: 800;
           color: white;
-          margin-bottom: 1rem;
           font-style: italic;
           letter-spacing: 0.1em;
           transition: transform 0.5s;
@@ -119,11 +163,11 @@ export default function Home() {
         }
 
         .github {
-          color: #ccc;
+          color: #00acee;
         }
 
         .github:hover {
-          color: #666;
+          color: #0084b4;
           transform: scale(1.1) rotate(-12deg);
         }
 
@@ -133,6 +177,8 @@ export default function Home() {
           .home-heading-2 {
             font-size: 2rem;
           }
+          .home-container {
+            margin-top:4rem;
 
           .icon {
             font-size: 1.8rem;
