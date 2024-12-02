@@ -290,8 +290,11 @@
 // };
 
 // export default AboutMe;
-"use client";
 
+
+
+
+"use client";
 const AboutMe = () => {
   return (
     <div className="about-container">
