@@ -13,12 +13,12 @@ export default function Home() {
         <div className="home-content">
           {/* Heading Section */}
           <h1 className="home-heading-1">Hey, I&apos;m</h1>
-          <h1 className="home-heading-2">Kanwal Samuel!</h1>
+          <h1 className="home-heading-2">Rizwana Perveen!</h1>
 
           {/* Social Media Icons */}
           <div className="social-icons">
             <a
-              href="https://www.linkedin.com/in/kanwal-samuel-0306112b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              href="https://www.linkedin.com/in/rizwana-perveen-a507202a7?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BCG7CppVsTtyGjoQDN7ZxYA%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="icon linkedin"
@@ -26,7 +26,7 @@ export default function Home() {
               <FaLinkedin />
             </a>
             <a
-              href="https://github.com/kanwalsamuel"
+              href="https://github.com/Rizwana/perveen"
               target="_blank"
               rel="noopener noreferrer"
               className="icon github"
@@ -60,7 +60,7 @@ export default function Home() {
   width: 100%;
   height: 100%;
   
-  background-image: url("/images/result.png");
+  background-image: url("/images/bg image.jpeg");
 
   background-size: cover; /* Scale the image to fit */
   background-repeat: no-repeat;
@@ -82,14 +82,14 @@ export default function Home() {
     width: 100%;
     height: 100%;
     background: transparent;
-    transition: 1s;
+    transition: 10s;
 
 
 }
 
 .home-container:hover .background-image{
      
-     background-image: url("/images/result.png");
+     background-image: url("/images/bg image.jpeg");
      background-size: 50%; /* Scale the image to fit */
     opacity: 0.5;
 }

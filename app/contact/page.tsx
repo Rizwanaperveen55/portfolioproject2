@@ -19,7 +19,7 @@ const ContactForm: React.FC = () => {
 
     // Construct mailto link
     const { name, email, message } = formData;
-    const mailtoLink = `mailto:sammjoel88@gmail.com?subject=Contact from ${name}&body=Email: ${email}%0A%0A${message}`;
+    const mailtoLink = `mailto:rizwanaperveen373@gmail.com?subject=Contact from ${name}&body=Email: ${email}%0A%0A${message}`;
 
     // Open mailto link
     window.location.href = mailtoLink;

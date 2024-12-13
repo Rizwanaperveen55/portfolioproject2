@@ -15,24 +15,29 @@ const AboutMe = () => {
       <div className="card-container">
         {/* Education Card */}
         <div className="card">
+
+         
+
           <h3 className="card-title">Education & Certification</h3>
           <ul className="card-list">
+
+          <li>
+      <span className="icon">🎓</span>
+      <span className="card-item">Master of Science in Computer Science, Karachi University</span>
+    </li>
             <li>
               <span className="icon">🎓</span>
-              <span className="card-item">Bachelor of Arts, Sindh University</span>
+              <span className="card-item">B.Com, Karachi University</span>
             </li>
             <li>
               <span className="icon">🎓</span>
-              <span className="card-item">Intermediate, Punjab Board</span>
+              <span className="card-item">Intermediate, Karachi Board</span>
             </li>
             <li>
               <span className="icon">🎓</span>
-              <span className="card-item">Matriculation, Punjab Board</span>
+              <span className="card-item">Matriculation, Karachi Board</span>
             </li>
-            <li>
-              <span className="icon">🎓</span>
-              <span className="card-item">English Language & IT Certifications, Karachi</span>
-            </li>
+          
           </ul>
           <p className="card-description">
             These qualifications have equipped me with a strong foundation for my career.
@@ -40,30 +45,33 @@ const AboutMe = () => {
         </div>
 
         {/* Experience Card */}
-        <div className="card">
-          <h3 className="card-title">Experience</h3>
-          <ul className="card-list">
-            <li>
-              <span className="icon">💼</span>
-              <span className="card-item">
-                Junior & Senior Front-End Developer at Governor Sindh IT University.
-              </span>
-            </li>
-            <li>
-              <span className="icon">💻</span>
-              <span className="card-item">
-                Developed projects like a calculator app, weather app, Tic Tac Toe game, and portfolio website.
-              </span>
-            </li>
-            <li>
-              <span className="icon">💻</span>
-              <span className="card-item">Proficient in developing robust CLI tools using TypeScript.</span>
-            </li>
-          </ul>
-          <p className="card-description">
-            My experience in these roles has enhanced my technical skills and project management capabilities.
-          </p>
-        </div>
+<div className="card">
+  <h3 className="card-title">Experience</h3>
+  <ul className="card-list">
+    <li>
+      <span className="icon">📚</span>
+      <span className="card-item">
+        Teacher with 32 years of experience in various educational settings.
+      </span>
+    </li>
+    <li>
+      <span className="icon">📝</span>
+      <span className="card-item">
+        Specializing in curriculum development and innovative teaching methodologies.
+      </span>
+    </li>
+    <li>
+      <span className="icon">🎓</span>
+      <span className="card-item">
+        Experienced in mentoring students and guiding them through their academic journeys.
+      </span>
+    </li>
+  </ul>
+  <p className="card-description">
+    My extensive teaching experience has enriched my ability to engage with students, design effective lessons, and foster a positive learning environment.
+  </p>
+</div>
+
 
         {/* Current Focus Card */}
         <div className="card">

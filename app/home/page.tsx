@@ -13,7 +13,7 @@ export default function Home() {
       <div className="container">
         {/* Navigation Bar */}
         <nav className="navbar">
-          <h1 className="navbar-heading">Kanwal Samuel</h1>
+          <h1 className="navbar-heading">Rizwana Perveen</h1>
         </nav>
 
         {/* Main Content */}
@@ -22,8 +22,8 @@ export default function Home() {
           <div className="left-cover">
             <div className="image-container">
               <Image
-                src="/images/update02.jpg"
-                alt="Kanwal Samuel"
+                src="/images/profile.jfif-removebg-preview.png"
+                alt="Rizwana Perveen"
                 layout="intrinsic"
                 width={400}
                 height={400}
@@ -48,14 +48,14 @@ export default function Home() {
             {/* Social Icons */}
             <div className="social-icons">
               <a
-                href="https://www.linkedin.com/in/kanwal-samuel-0306112b8"
+                href="https://www.linkedin.com/in/rizwana-perveen-a507202a7?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BCG7CppVsTtyGjoQDN7ZxYA%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaLinkedin />
               </a>
               <a
-                href="https://github.com/kanwalsamuel"
+                href="https://github.com/RizwanaPerveen"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -84,7 +84,7 @@ export default function Home() {
           left: 0;
           width: 100%;
           height: 100%;
-          background-image: url("/images/result.png");
+          background-image: url("/images/bg image.jpeg");
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
